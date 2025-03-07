@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+
+{% block title %} Home Page {% endblock %} 
+
+{% block content %}
+<h2>Welcome to our Home Page</h2>
+<p>
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit voluptates ab
+  minima inventore dolorem consequatur corrupti non, ex quasi adipisci.
+</p>
+
+
+<h3>Latest Post</h3>
+<ul>
+    
+    {% for post in posts %}
+        <li><h4>{{post.title}}</h4>
+            <p>{{post.content}}</p>
+            <small>Published on: {{post.published_date}}</small>
+        </li>
+    {% endfor %}
+        
+</ul>
+
+{% endblock %}
