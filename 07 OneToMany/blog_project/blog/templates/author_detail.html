@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ object.name }} - Author Detail{% endblock %}
+
+{% block content %}
+<h1 class="mt-5">{{ object.name }}</h1>
+<p>Bio: {{ object.bio }}</p>
+
+<h2 class="mt-4">Posts by {{ object.name }}</h2>
+<ul class="list-group">
+    {% for post in object.post_set.all %}
+        <li class="list-group-item"><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

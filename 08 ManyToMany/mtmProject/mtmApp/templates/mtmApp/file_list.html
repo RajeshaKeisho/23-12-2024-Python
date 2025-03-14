@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} File Lists- My Django App {% endblock title %}
+
+{% block content %}
+<h2>File Lists:</h2>
+<ul>
+    {% for file_content in file_contents %}
+    <li><strong>{{file_content.file.name}}</strong> - Tags: {{file_content.file.tags.all|join:', '}}
+    <a href="{% url 'download_file' file_content.file.id %}">Download</a>
+    <p>{{file_content.content}}</p>
+</li>
+{% endfor %}
+</ul>
+{% endblock content %}
