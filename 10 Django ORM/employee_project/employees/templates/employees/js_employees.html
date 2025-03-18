@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Employees in the JS Department</h1>
+    <ul>
+        {% for employee in js_employees %}
+            <li>{{ employee.name }} - Salary: {{ employee.salary }}</li>
+        {% empty %}
+            <li>No employees found in the JS department.</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
